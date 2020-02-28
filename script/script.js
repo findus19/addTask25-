@@ -23,29 +23,28 @@ window.addEventListener('DOMContentLoaded', () =>{
     response.forEach((item) => {
       
       const div = document.createElement('div');
+      //cardItem[0].appendChild(div)
 
       let inner = `
-      <div class='card'>
-        <div class='card_item'>
-          <img class="heroe_photo" src="${item.photo}" alt="" width="100px">
-          <div class="card_content"></div>
-            <span class="name">${item.name}</span>
-            <span class="real-name">${item.realName}</span>
-            <span>${item.actors}</span>
-            <strong>Birthday: ${item.birthDay}</strong>
-            <strong>Deathhday: ${item.deathDay}</strong>
-            <span>${item.status}</span>
-            <span>${item.actors}</span>
-            <span>${item.movies}</span>
-          </div>
-        </div>
-      </div>`;
+
+          <img class="heroe_photo" src="${item.photo}" alt="">
+          <div class="card_content">
+            <div class="name">${item.name}</div>
+            <div class="real-name">${item.species}</div>
+            <div>${item.genger}</div>
+            <div>Birthday: ${item.birthDay}</div>
+            <div>Deathhday: ${item.deathDay}</div>
+            <div>${item.status}</div>
+            <div>${item.actors}</div>
+            <div>${item.movies}</div>
+          </div>`;
   
       
   
       div.innerHTML = inner;
-  
-      document.body.append(div);
+      div.classList.add('card_item');
+      cardItem[0].appendChild(div)
+      //document.cardItem.append(div);
     
     });
 
