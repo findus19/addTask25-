@@ -22,28 +22,30 @@ window.addEventListener('DOMContentLoaded', () =>{
   const practice = (response) => {
     response.forEach((item) => {
       
-      createDiv(item);
+      const div = document.createElement('div');
+
+      let inner = `
+      <div class='card'>
+        <div class='card_item'>
+          <img class="heroe_photo" src="${item.photo}" alt="" width="100px">
+          <div class="card_content"></div>
+            <span class="name">${item.name}</span>
+            <span class="real-name">${item.realName}</span>
+            <span>${item.actors}</span>
+            <strong>Birthday: ${item.birthDay}</strong>
+            <strong>Deathhday: ${item.deathDay}</strong>
+            <span>${item.status}</span>
+            <span>${item.actors}</span>
+            <span>${item.movies}</span>
+          </div>
+        </div>
+      </div>`;
+  
       
-        /* cardItem.forEach((elem, index) => {
-            console.log(elem[index])
-          elem[index] = document.createElement('div');
-          elem[index].classList.add('card_item');
-          cardItem[index].appendChild(elem[index]);
-          photo.src = item.photo;
-        })
-        content.forEach((elem, index) => {
-          elem[index] = document.createElement('div');
-          elem[index].classList.add('card_content');
-          content[index].appendChild(elem[index]);
-          name.textContent = item.name;
-          species.textContent = item.species;
-          gender.textContent = item.genger;
-          birthDay.textContent = item.birthDay;
-          deathDay.textContent = item.deathDay;
-          status.textContent = item.status;
-          actors.textContent = item.actors;
-          movies.textContent = item.movies; 
-        }) */
+  
+      div.innerHTML = inner;
+  
+      document.body.append(div);
     
     });
 
